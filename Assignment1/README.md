@@ -42,6 +42,8 @@ When it comes to developing the C code to implement the abstraction for the stac
 
 A linked-list is somewhat of a dynamic array that grows and shrinks as values are added to it.  Rather than being stored in a continuous block of memory, the values in the dynamic array are linked together with pointers.  Each element of a linked list is a structure that contains a value and a link to its neighbor.  The link is basically a pointer to another structure that contains a value and another pointer to another structure, and so on.  As an example, consider a linked list representation of the three values on the stack in the previous example.  In a linked-list, this would look like
 
+![Image of Linked List](./assign1-linked-list.jpg)
+
 A linked-list with a stack pointing to a head that points to the contents.
 
 The first box on the left is a pointer to the type stackT  that is located in static memory which points to the stackT structure in dynamic memory.  This structure contains a pointer to the first element of the stack, or the head.  The type for this structure is given by the stackT type,
@@ -105,7 +107,7 @@ typedef enum {false, true} bool;
 
 You should copy the accompanying zip file (Assignment1.zip) from Canvas. 
 
-Your job is to create the file stack.c, which contains definitions of the functions defined in stack.h.  You should include the stack.h header file as well as stdio.h in your version of stack.c (see main.c for an example).  The functions you create will be used in the main.c  program which performs a few tests with your stack functions.  You should not alter the main.c file, since this is the file that will be used to grade your assignment.
+Your job is to create the file stack.c, which contains definitions of the functions defined in stack.h.  You should include the `stack.h` header file as well as `stdio.h` in your version of `stack.c` (see `main.c` for an example).  The functions you create will be used in the main.c  program which performs a few tests with your stack functions.  You should not alter the main.c file, since this is the file that will be used to grade your assignment.
 
 ### Using the Makefile
 
@@ -121,11 +123,11 @@ Where the tabs (not spaces) before dependencies and command are very important! 
 main.o: main.c
         gcc --c main.c
 ```
-This line says that the main.o object file depends on its source main.c.  If main.c  has been changed since the last compile, then main.o is created with the command listed, which is given by
+This line says that the `main.o` object file depends on its source `main.c`.  If `main.c`  has been changed since the last compile, then `main.o` is created with the command listed, which is given by
 
 ```gcc --c main.c```
 
-Once main.o and stack.o (in a similar manner) are created (and hence up to date), the command beneath the test statement is executed.   In this case, the command is
+Once `main.o` and `stack.o` (in a similar manner) are created (and hence up to date), the command beneath the test statement is executed.   In this case, the command is
 
 `gcc main.o stack.o –o Assignment1`
 
@@ -133,7 +135,7 @@ So when you type, “make”, the program “Assignment1” is created by linkin
 
 To run “Assignment1” run the following from the command prompt:
 
-$./Assignment1
+`$./Assignment1`
 
 A series of tests will run. 
 
@@ -141,10 +143,10 @@ You can also clean up your directory by typing “make clean”, and this will r
 
 ### Deliverables and due date
 
-You only need to submit your version of stack.c to Canvas by the due date.
+You only need to submit your version of `stack.c` to Canvas by the due date.
 
 This project must be done alone. Note that it is always OK to talk to others about your code, as well as help them debug their code. Copying code, however, is considered cheating. Don't do it! How will you learn that way? Read this for more info on what is OK and is not.  Include comments in the header section of your program that indicates who you spoke with and the general topic of the conversation.  Similar to a citation in a paper, this will prevent you from being accused of cheating should very similar methods, names, etc. be used in your programs.
 
-The following is the zip file of "runValgrind.sh," "main.c," "stack.h," and "makefile." Assignment1.zip
+The following is the zip file of `runValgrind.sh`, `main.c`, `stack.h`, and `Makefile` called Assignment1.zip
 
 Be aware that you can use any environment to develop this project, but that the target machine is a Debian based Linux virtual machine.
