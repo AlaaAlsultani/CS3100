@@ -1,7 +1,7 @@
 // CS 3100 Assignment2
 // Author: Brayden Houston
 // Date: 20190522
-// FileName: test.c 
+// FileName: hw2.c 
 
 #include "types.h"
 #include "stat.h"
