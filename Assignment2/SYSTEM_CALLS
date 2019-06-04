@@ -1,0 +1,28 @@
+Brayden Houston
+Sum 19 10702
+
+1. An explanation of the purpose of system calls.
+	A system call is a structured way to interact with
+	the kernel to interact with system hardware and 
+	resources.
+
+2. Identification of the data structure(s) associated with system calls.
+	Stacks
+	Arrays
+	Vectors
+
+3. Identification of the files associated with system calls in XV6.
+	+  syscall.h
+	+  syscall.c
+	+  sysproc.c
+	+  usys.S
+	+  user.h
+	+  Source code file - Program making the call
+
+4. An explanation of how you might go about creating a System Call.
+	Define call in syscall.h
+	Add prototype to call in syscall.c
+	Implement system call function call in sysproc.c
+	Add interface in usys.S
+	Add function to user.h
+	Make call to funtion in you source code file
