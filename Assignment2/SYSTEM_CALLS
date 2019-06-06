@@ -8,6 +8,7 @@ Sum 19 10702
 
 2. Identification of the data structure(s) associated with system calls.
 	Arrays
+	Stacks
 
 3. Identification of the files associated with system calls in XV6.
 	+  syscall.h
