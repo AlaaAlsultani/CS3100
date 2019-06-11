@@ -14,6 +14,10 @@
 	    num,    // the number of integer values in the file
 	    i,      // loop control variable for reading values
 	    temp=0; // used to store each value read from the file
+
+	int min = 1000000; // This will hold the min value as we read the file 
+	int max = 0; // This will hold the max value as we read the file
+
 	long size;  // size in bytes of the input file
 /*********************************************************************/
    
@@ -30,18 +34,16 @@
 		size = ftell(ft);      //what byte in file am I at?
 		fseek (ft,0,SEEK_SET); //go to beginning of file
 		num = (int)size / (int)sizeof(int); // number of integer values
-		printf("file size: %li bytes\n", size);
-		printf("sizeof(int) = %i bytes\n",(int) sizeof(int));
-		printf("how many integers = %i\n\n", num);
 		// now read and print out the values
 		for(i = 0; i < num; i++){
 			fread(&temp,sizeof(int),1,ft);
-			printf("%5i: %7i  ",pid,temp);
-			if ((i+1)%5 == 0) 
-				printf("\n");
+			if( temp > max ) max  = temp;
+			if( temp < min ) min  = temp;
 		}
 		fclose(ft);  // close the file now that we're done
 	}
-	printf("\n");  // only have a tab on last line so newline
+	printf("Process: %i\n", pid);
+	printf("The min value is: %i\n",min); 
+	printf("The max value is: %i\n", max);
 	return 0;
 }

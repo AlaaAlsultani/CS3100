@@ -1,16 +1,16 @@
-all: gendata readfile printstuff fork
+all: gendata readfile printstuff hw3 fork
 
 gendata: gendata.c
 	gcc -o gendata gendata.c
 
-readfile: readfile.c
-	gcc -o readfile readfile.c
+hw3: hw3.c
+	gcc -o hw3 hw3.c
 
 printstuff:
 	gcc -o printstuff printstuff.c
 
-printstuff:
+fork:
 	gcc -o fork fork.c
 
 clean:
-	rm gendata readfile printstuff fork
+	rm gendata hw3 printstuff fork
