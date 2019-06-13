@@ -11,6 +11,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <time.h>
 
  int main(int argc, char * argv[]) {
 	const char * filename;  // name of file to read
@@ -24,6 +25,7 @@
 	int max = 0; // This will hold the max value as we read the file
 
 	long size;  // size in bytes of the input file
+	clock_t begin = clock();
 /*********************************************************************/
    
     if (argc<2) {  // not enough arguments, need output file name
@@ -47,8 +49,13 @@
 		}
 		fclose(ft);  // close the file now that we're done
 	}
+
+	clock_t end = clock();
+	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
 	printf("Process: %i\n", pid);
 	printf("The min value is: %i\n",min); 
 	printf("The max value is: %i\n", max);
+	printf("Program ran for: %f seconds\n", time_spent );
 	return 0;
 }
