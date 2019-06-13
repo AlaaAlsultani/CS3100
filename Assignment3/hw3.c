@@ -1,3 +1,8 @@
+// CS 3100 Assignment3
+// Author: Brayden Houston
+// Date: 20190610
+// FileName: hw3.c
+
 /*
  * This is a sample program, showing how to read the file.  
  */

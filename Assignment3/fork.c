@@ -1,3 +1,8 @@
+// CS 3100 Assignment3
+// Author: Brayden Houston
+// Date: 20190610
+// FileName: fork.c
+
 /*
  * This program creates a child process that it communicates
  */
