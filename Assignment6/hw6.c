@@ -11,8 +11,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAXTHREADS 100
-
+#define MAXTHREADS 100 //Max thread const
 
 void *threadPrintName(void *arg)
 {
@@ -20,7 +19,7 @@ void *threadPrintName(void *arg)
 }
 
 void *threadFib(void *prt){
-	int i = *((int *) prt );
+	int i = *((int *) prt ); // cast and deref passed int
 
 	int fib(int n){
 		if(n==0){
@@ -30,7 +29,8 @@ void *threadFib(void *prt){
 			return 1;
 		}
 		else{
-			return (fib(n-1) + fib(n-2));
+			return (fib(n-1) + fib(n-2)); // Handle fib sequence
+						      // using recursion.
 		}
 	}
 
@@ -46,32 +46,33 @@ void *threadFib(void *prt){
 int getSelection(){
 	int select = 0;
 	
-	printf("\n1) Print out my name\n2) Find the i-th Fibonacci number\n3) Exit");
+	printf("\n1) Print out my name\n
+		2) Find the i-th Fibonacci number\n
+		3) Exit");
 	printf("\nEnter selection: ");
    	scanf("%d", &select);
 	return select;
 }
 
 int main(int argc, char * argv[]) { 
-	int select;
-	int i;
+	int select; //User menu selection
+	int i; // i value of Fib seq
 	pthread_t thread[MAXTHREADS];
 	pthread_t *t = thread;
 
 	printf("Welcome!\n");
 	while ( ( select = getSelection() ) != 3 ){
-		
-		switch(select){
-			case 1:
-        			pthread_create(t, NULL, threadPrintName, &select);
-				t++;
-				break;
-			case 2:
-				printf("\nPlease enter i for the Fibonacci series: ");
-				scanf("%d", &i);
-        			pthread_create(t, NULL, threadFib, &i);
-				t++;
-				break;
+	     switch(select){
+	          case 1:
+        	       pthread_create(t, NULL, threadPrintName, &select);
+		       t++;
+		       break;
+		  case 2:
+	               printf("\nPlease enter i for the Fibonacci series: ");
+		       scanf("%d", &i);
+        	       pthread_create(t, NULL, threadFib, &i);
+		       t++;
+		       break;
 		}
 	}
     	printf("\nGoodbye\n");
