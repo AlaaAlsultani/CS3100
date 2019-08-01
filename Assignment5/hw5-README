@@ -1,0 +1,30 @@
+Files Modified During HW5:
+	Makefile - Added references to new programs child, forkExecTest, and
+		   prichi
+
+	param.h - Added NUMPRI value
+	
+	proc.h - Added priority int to process strct
+
+	proc.c - Added new functions to work with prority queues
+
+	syscall.c - Added funtions sys_setPriority, sys_getPriority
+		    sys_nice
+
+	syscall.h - Added defines for sys_setPriority, sys_getPriority
+                    sys_nice
+
+	sysproc.c - Added funtions sys_setPriority, sys_getPriority
+                    sys_nice
+
+	user.h - Added funtions sys_setPriority, sys_getPriority
+                    sys_nice
+
+	usys.S - Added SYSCALL functions for sys_setPriority, sys_getPriority
+                    sys_nice
+
+	child.c - New file for hw5
+
+	forkExecTest.c - New file for hw5
+
+	prichi.c - New file for hw5
